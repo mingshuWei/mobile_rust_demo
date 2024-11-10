@@ -1,0 +1,4 @@
+module mobile_ffiFFI {
+    header "mobile_ffiFFI.h"
+    export *
+}

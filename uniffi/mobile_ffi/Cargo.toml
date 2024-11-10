@@ -1,0 +1,25 @@
+[package]
+name = "mobile_ffi"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+mock = []
+
+[profile.release]
+lto = true
+opt-level = "s"
+#strip = true
+debug = true
+codegen-units = 1
+
+[dependencies]
+uniffi.workspace = true
+mobile = { path = "../../mobile"}
+thiserror = "1.0.56"
+
+[build-dependencies]
+uniffi = { workspace = true, features = ["build"] }
+
+[lib]
+crate-type = ["cdylib", "staticlib"]

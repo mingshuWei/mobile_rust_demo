@@ -1,0 +1,23 @@
+[package]
+name = "mobile_oh"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+napi-ohos        = { version = "0.0.6" }
+napi-derive-ohos = { version = "0.0.6" }
+mobile = { path = "../mobile"}
+proc-macro2 = "=1.0.79"
+
+[build-dependencies]
+napi-build-ohos = { version = "0.0.3" }
+
+[profile.release]
+lto = true
+opt-level = "s"
+#strip = true
+debug = true
+codegen-units = 1

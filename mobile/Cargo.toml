@@ -1,0 +1,24 @@
+[package]
+name = "mobile"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+
+[profile.release]
+lto = true
+opt-level = "s"
+#strip = true
+debug = true
+codegen-units = 1
+
+[lib]
+name = "mobile"
+
+[[bin]]
+name = "mobile_test"
+path = "bin/main.rs"
+
+
+[dependencies]
+anyhow='1.0.86'

@@ -1,0 +1,10 @@
+**/*.rs.bk
+**/*.lock
+**/*.class
+**/*test/
+.idea/
+**/.DS_Store
+**/target/
+**/build/
+**/caches-jvm/
+.vscode/
