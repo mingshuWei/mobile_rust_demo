@@ -41,16 +41,16 @@ def replace_str_in_file(file_path, origin_string, replacement_string):
 def delete_path(path):
     """删除文件或文件夹（包括非空文件夹）"""
     
-    if os.path.isfile(path):  # 如果是文件
+    if os.path.isfile(path):
         try:
             os.remove(path)
             print(f"file {path} remove")
         except Exception as e:
             print(f"remove file {path} err: {e}")
     
-    elif os.path.isdir(path):  # 如果是文件夹
+    elif os.path.isdir(path):
         try:
-            shutil.rmtree(path)  # 删除文件夹及其内容
+            shutil.rmtree(path)
             print(f"dir {path} remove")
         except Exception as e:
             print(f"remove dir {path} err: {e}")
