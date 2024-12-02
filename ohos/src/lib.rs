@@ -43,7 +43,7 @@ impl mobile::Log for FfiLog {
     }
 }
 
-#[napi(ts_args_type = "callback: (msg: string) => void")]
+#[napi(ts_args_type = "callback: (err: null | Error, msg: string) => void")]
 pub fn set_logger(callback: JsFunction) -> Result<()> {
     let call_fn: ThreadsafeFunction<String, ErrorStrategy::CalleeHandled> = callback
         .create_threadsafe_function(0, |ctx: ThreadSafeCallContext<String>| {
